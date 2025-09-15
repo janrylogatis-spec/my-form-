@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Tech Form</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: radial-gradient(circle at top left, #0f0f0f, #000000 80%);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .form-container {
+      background: rgba(20, 20, 20, 0.95);
+      border: 1px solid #00f7ff;
+      border-radius: 15px;
+      padding: 30px;
+      width: 350px;
+      box-shadow: 0 0 25px rgba(0, 247, 255, 0.5);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #00f7ff;
+      text-shadow: 0 0 10px #00f7ff;
+    }
+    label { display: block; margin-bottom: 5px; font-size: 14px; color: #ccc; }
+    input, textarea {
+      width: 100%; padding: 10px; margin-bottom: 15px;
+      border: none; border-radius: 8px;
+      background: #111; color: #fff;
+      outline: none; font-size: 14px;
+      box-shadow: 0 0 5px rgba(0, 247, 255, 0.3);
+      transition: 0.3s;
+    }
+    input:focus, textarea:focus {
+      box-shadow: 0 0 15px #00f7ff;
+      background: #1a1a1a;
+    }
+    .options { margin-bottom: 15px; }
+    .options input { margin-right: 8px; }
+    .submit-btn {
+      width: 100%; padding: 12px;
+      border: none; border-radius: 8px;
+      background: linear-gradient(90deg, #00f7ff, #00ffa3);
+      color: #000; font-size: 16px; font-weight: bold;
+      cursor: pointer; transition: 0.3s;
+    }
+    .submit-btn:hover {
+      background: linear-gradient(90deg, #00ffa3, #00f7ff);
+      box-shadow: 0 0 20px #00f7ff;
+    }
+    /* Hidden success message */
+    .success-message {
+      display: none;
+      font-size: 2.5rem;
+      font-weight: bold;
+      text-align: center;
+      color: #00f7ff;
+      text-shadow: 0 0 20px #00f7ff, 0 0 40px #00ffa3;
+      animation: glow 2s infinite alternate;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #00f7ff, 0 0 20px #00ffa3; }
+      to   { text-shadow: 0 0 30px #00ffa3, 0 0 60px #00f7ff; }
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container" id="formContainer">
+    <h2>User Registration</h2>
+    <form id="myForm">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="4"></textarea>
+
+      <div class="options">
+        <label>Gender:</label>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label>
+      </div>
+
+      <div class="options">
+        <input type="checkbox" id="subscribe" name="subscribe">
+        <label for="subscribe">Subscribe to newsletter</label>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </div>
+
+  <!-- Success message -->
+  <div class="success-message" id="successMessage">
+    IMISSYOU NAJUD KAAYO!!!
+  </div>
+
+  <script>
+    // Prevent default form submission
+    document.getElementById("myForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      // Hide form
+      document.getElementById("formContainer").style.display = "none";
+      // Show message
+      document.getElementById("successMessage").style.display = "block";
+    });
+  </script>
+</body>
+</html>
+
+
